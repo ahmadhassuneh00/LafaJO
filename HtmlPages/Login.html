@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="../CssPages/style.css" />
+    <script
+      src="https://kit.fontawesome.com/04ad59f1ad.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" href="../Images/login.png" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../HtmlPages/Home.html">
+          <img class="IMAGE" src="../Images/logoedit.png" alt="Home Page" />
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../HtmlPages/Trips.html">Trips</a></li>
+        <li><a href="../HtmlPages/Cars.html">Cars</a></li>
+        <li><a href="../HtmlPages/Market.html">Market</a></li>
+        <li><a href="../HtmlPages/Review.html">Review</a></li>
+      </ul>
+      <div class="auth-links"></div>
+    </nav>
+    <div class="back">
+      <img alt="Login" src="../Images/loginBack.svg" />
+    </div>
+    <div class="form-container">
+      <h2 class="LoginTitle">Login</h2>
+      <div class="TypeOfLogin">
+        <div class="user"><a href="../HtmlPages/Login.html">User</a></div>
+        <div class="Company">
+          <a href="../HtmlPages/CompanyLogin.html">Company</a>
+        </div>
+      </div>
+      <form id="login-form">
+        <label for="email">Email:</label>
+        <input type="text" id="email" required />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" required />
+
+        <button type="submit">Login</button>
+      </form>
+      <p>
+        Don't have an account? <a href="../HtmlPages/signup.html">Sign up</a>
+      </p>
+      <p>
+        New company?
+        <a href="../HtmlPages/registration.html">Register your company</a>
+      </p>
+    </div>
+    <script src="../JsPages/apps.js"></script>
+    <script src="../JsPages/Login.js"></script>
+    <script>
+      function logout() {
+        localStorage.removeItem("authToken");
+        localStorage.removeItem("RegistrationId");
+        localStorage.removeItem("TypeId");
+        localStorage.removeItem("UserId");
+        window.location.href = "CompanyLogin.html";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Car</title>
+    <link rel="stylesheet" href="../CssPages/UpdateCar.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Update Car</h1>
+      <form id="update-car-form" enctype="multipart/form-data">
+        <div class="form-row">
+          <div class="part1">
+            <div class="inputBx">
+              <input
+                type="text"
+                id="car-make"
+                placeholder="Make as Ford"
+                required
+              />
+            </div>
+            <div class="inputBx">
+              <input
+                type="text"
+                id="car-model"
+                placeholder="Model as Fusion"
+                required
+              />
+            </div>
+            <div class="inputBx">
+              <input
+                type="number"
+                id="car-year"
+                placeholder="Year"
+                required
+                min="1900"
+                max="2100"
+              />
+            </div>
+            <div class="inputBx">
+              <input
+                type="text"
+                id="car-license-plate"
+                placeholder="License Plate as 10-xxxxx"
+                required
+              />
+            </div>
+          </div>
+          <div class="part2">
+            <div class="inputBx">
+              <input
+                type="text"
+                id="car-fuel-type"
+                placeholder="Fuel Type as hybrid"
+              />
+            </div>
+            <div class="inputBx">
+              <input
+                type="text"
+                id="car-transmission-type"
+                placeholder="Transmission Type as manual"
+              />
+            </div>
+            <div class="inputBx">
+              <input type="text" id="car-color" placeholder="Color" />
+            </div>
+            <div class="inputBx">
+              <input
+                type="number"
+                id="car-daily-rate"
+                placeholder="Daily Rate"
+                required
+                min="0"
+                step="0.01"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="part3">
+          <div class="inputBx">
+            <input type="file" accept="image/*" id="car-image" required />
+          </div>
+          <div class="inputBx">
+            <input type="submit" value="Update Car" />
+          </div>
+        </div>
+      </form>
+      <div id="responseMessage"></div>
+    </div>
+
+    <script>
+      document
+        .getElementById("update-car-form")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault(); // Prevent default form submission
+
+          // Dynamic URL for updating car
+          const url = `http://localhost:5150/Car/${localStorage.getItem(
+            "CarId"
+          )}`;
+
+          // Collecting data from the form
+          const carId = localStorage.getItem("CarId"); // Get CarId from localStorage
+          const make = document.getElementById("car-make").value;
+          const model = document.getElementById("car-model").value;
+          const year = document.getElementById("car-year").value;
+          const licensePlate =
+            document.getElementById("car-license-plate").value;
+          const fuelType = document.getElementById("car-fuel-type").value;
+          const transmissionType = document.getElementById(
+            "car-transmission-type"
+          ).value;
+          const color = document.getElementById("car-color").value;
+          const dailyRate = document.getElementById("car-daily-rate").value;
+          const image = document.getElementById("car-image").files[0];
+          const registrationId = localStorage.getItem("RegistrationId");
+
+          // Prepare form data for sending
+          const formData = new FormData();
+          formData.append("Id", carId); // Include the car ID
+          formData.append("Make", make);
+          formData.append("Model", model);
+          formData.append("Year", year);
+          formData.append("LicensePlate", licensePlate);
+          formData.append("FuelType", fuelType);
+          formData.append("TransmissionType", transmissionType);
+          formData.append("Color", color);
+          formData.append("DailyRate", dailyRate);
+          formData.append("RegistrationId", registrationId);
+          formData.append("ImageURL", image); // Ensure backend expects "ImageURL"
+
+          try {
+            // Send PUT request to update car
+            const response = await fetch(url, {
+              method: "PUT",
+              body: formData,
+            });
+
+            if (response.ok) {
+              const jsonResponse = await response.json();
+              alert("Car updated successfully!");
+
+              // Refresh the parent window and close the current one
+              if (window.opener) {
+                window.opener.location.reload(); // Reload the parent window
+              }
+              window.close(); // Close the current window
+            } else {
+              const errorResponse = await response.text();
+              document.getElementById(
+                "responseMessage"
+              ).textContent = `Failed to update car: ${errorResponse}`;
+              document.getElementById("responseMessage").style.color = "red";
+            }
+          } catch (error) {
+            // Handle unexpected errors
+            console.error("Error:", error);
+            document.getElementById("responseMessage").textContent =
+              "An unexpected error occurred.";
+            document.getElementById("responseMessage").style.color = "red";
+          }
+        });
+
+      // Optionally remove CarId after it's used
+      // localStorage.removeItem("CarId");
+    </script>
+  </body>
+</html>

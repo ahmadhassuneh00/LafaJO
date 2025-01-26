@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LafaJO</title>
+    <link rel="icon" href="../Images/logoedit.png" />
+    <link rel="stylesheet" href="../CssPages/Cars.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../HtmlPages/Home.html">
+          <img class="IMAGE" src="../Images/logoedit.png" alt="Home Page" />
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../HtmlPages/Trips.html">Trips</a></li>
+        <li><a href="../HtmlPages/Cars.html">Cars</a></li>
+        <li><a href="../HtmlPages/Market.html">Market</a></li>
+        <li><a href="../HtmlPages/Review.html">Review</a></li>
+      </ul>
+      <div class="auth-links"></div>
+    </nav>
+
+    <div class="search-container">
+      <input
+        type="text"
+        id="search-bar"
+        placeholder="Write Name Of Company Car or the model car you need..."
+      />
+
+      <div class="filter-container">
+        <label for="fuel-type">Fuel Type: </label>
+        <select id="fuel-type" name="fuel-type">
+          <option value="All">All</option>
+          <option value="Electric">Electric</option>
+          <option value="Hybrid">Hybrid</option>
+          <option value="Gasoline">Gasoline</option>
+        </select>
+        <label for="Transmission-Type">Transmission Type:</label>
+        <select id="Transmission-Type" name="Transmission-Type">
+          <option value="All">All</option>
+          <option value="Automatic">Automatic</option>
+          <option value="Manual">Manual</option>
+        </select>
+        <label>Daily Rate:</label>
+        <select id="sort-price" name="sort-price">
+          <option value="All">All</option>
+          <option value="asc">Low to High</option>
+          <option value="desc">High to Low</option>
+        </select>
+      </div>
+      <button id="search-button">Search</button>
+    </div>
+
+    <section class="car-details">
+      <h2>Car Details and Rentals</h2>
+      <section class="car-details2"></section>
+      <!-- Dynamic Car Details Will Be Added Here -->
+    </section>
+
+    <!-- <footer class="contact-details">
+      <h2>Contact Us</h2>
+    </footer> -->
+
+    <script src="../JsPages/Cars.js"></script>
+    <script>
+      function logout() {
+        localStorage.removeItem("authToken");
+        localStorage.removeItem("RegistrationId");
+        localStorage.removeItem("TypeId");
+        localStorage.removeItem("UserId");
+        window.location.href = "CompanyLogin.html";
+      }
+    </script>
+    <div class="pagination"></div>
+  </body>
+</html>

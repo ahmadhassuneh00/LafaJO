@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LafaJO</title>
+    <link rel="icon" href="../Images/logoedit.png" />
+    <link rel="stylesheet" href="../CssPages/Review.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../HtmlPages/Home.html"
+          ><img class="IMAGE" src="../Images/logoedit.png" alt="Home Page"
+        /></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../HtmlPages/Trips.html">Trips</a></li>
+        <li><a href="../HtmlPages/Cars.html">Cars</a></li>
+        <li><a href="../HtmlPages/Market.html">Market</a></li>
+        <li><a href="../HtmlPages/Review.html">Review</a></li>
+
+      </ul>
+      <div class="auth-links">
+      </div>
+    </nav>
+
+    <div class="search-container">
+      <input type="text" id="search-bar" placeholder="Search..." />
+      <button id="search-button">Search</button>
+    </div>
+
+    <section class="reviews-details">
+      <h2>Reviews</h2>
+     
+      <!-- Add more trips as needed -->
+    </section>
+
+    <section class="trip-details">
+      <h2>Haven't BOOked Yet?</h2>
+      <div class="trip">
+        <p><img src="../Images/trip.png" alt="trip" /></p>
+        <a href="../HtmlPages/Trips.html">Book Now</a>
+      </div>
+    </section>
+
+    <section class="car-details">
+      <h2>Need A Car?</h2>
+      <div class="car">
+        <p><img src="../Images/landcrusier.jpg" alt="car" /></p>
+        <a href="../HtmlPages/Cars.html">Rent Now</a>
+      </div>
+    </section>
+
+    <section class="market-details">
+      <h2>Explore Our Market</h2>
+      <div class="market">
+        <p><img src="../Images/market.jpg" alt="market" /></p>
+        <a href="market">Buy Now</a>
+      </div>
+    </section>
+    <script src="../JsPages/Review.js"></script>
+    <script>
+      function logout() {
+        localStorage.removeItem("authToken");
+        localStorage.removeItem("RegistrationId");
+        localStorage.removeItem("TypeId");
+        localStorage.removeItem("UserId");
+        window.location.href = "CompanyLogin.html";
+      }
+    </script>
+  </body>
+</html>
