@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Item</title>
+    <link rel="stylesheet" href="../CssPages/UpdateItem.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Update Item</h1>
+      <form id="itemForm" enctype="multipart/form-data">
+        <label for="Name">Name of product:</label>
+        <input type="text" id="Name" name="Name" required />
+
+        <label for="Quantity">Number Of Items:</label>
+        <input type="number" id="Quantity" name="Quantity" required />
+
+        <label for="price">Price ($):</label>
+        <input type="number" id="price" name="price" required />
+
+        <label for="image">Image:</label>
+        <input type="file" id="image" name="image" accept="image/*" />
+
+        <button type="submit">Update Item</button>
+      </form>
+      <div id="responseMessage"></div>
+    </div>
+
+    <script>
+      const itemId = localStorage.getItem("ItemId");
+      const registrationId = localStorage.getItem("RegistrationId");
+      const url = `http://localhost:5150/Item/${itemId}`;
+
+      document
+        .getElementById("itemForm")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault(); // Prevent default form submission
+
+          const title = document.getElementById("Name").value;
+          const content = document.getElementById("Quantity").value;
+          const price = document.getElementById("price").value;
+          const image = document.getElementById("image").files[0];
+
+          // Prepare form data for sending
+          const formData = new FormData();
+          formData.append("Name", title);
+          formData.append("Quantity", content);
+          formData.append("price", price);
+
+          if (image) {
+            formData.append("imageURL", image);
+          }
+          formData.append("RegistrationId", registrationId);
+
+          try {
+            const response = await fetch(url, {
+              method: "PUT", // Correct method type
+              body: formData,
+            });
+
+            const responseMessage = document.getElementById("responseMessage");
+
+            if (response.ok) {
+              const jsonResponse = await response.json();
+              alert("Item updated successfully!");
+              responseMessage.style.color = "green";
+              window.close();
+              localStorage.removeItem("ItemId");
+            } else {
+              responseMessage.textContent = "Failed to update item.";
+              responseMessage.style.color = "red";
+            }
+          } catch (error) {
+            console.error("Error:", error);
+            document.getElementById("responseMessage").textContent =
+              "An error occurred.";
+          }
+        });
+    </script>
+  </body>
+</html>

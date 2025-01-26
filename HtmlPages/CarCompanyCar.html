@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Information Form</title>
+    <link rel="stylesheet" href="../CssPages/CarCompanyCar.css" />
+    <script>
+      function isAuthenticated() {
+        const token = localStorage.getItem("authToken");
+        return token !== null;
+      }
+
+      function protectRoute() {
+        if (!isAuthenticated()) {
+          window.location.href = "../HtmlPages/CompanyLogin.html";
+        }
+      }
+
+      window.onload = function () {
+        protectRoute();
+        initializeCompanyProfile(); // Call to initialize the profile
+      };
+    </script>
+  </head>
+  <body>
+    <div class="rings-container">
+      <div class="ring">
+        <i style="--clr: #00ff0a"></i>
+        <i style="--clr: #ff0057"></i>
+        <i style="--clr: #fffd44"></i>
+        <div class="Car">
+          <h2 class="title">Add Car</h2>
+          <form id="add-car-form">
+            <div class="form-row">
+              <div class="part1">
+                <div class="inputBx">
+                  <label for="car-make">Car Make:</label>
+                  <input
+                    type="text"
+                    id="car-make"
+                    placeholder="Make as Ford"
+                    required
+                  />
+                </div>
+                <div class="inputBx">
+                  <label for="car-model">Car Model:</label>
+                  <input
+                    type="text"
+                    id="car-model"
+                    placeholder="Model as Fusion"
+                    required
+                  />
+                </div>
+                <div class="inputBx">
+                  <label for="car-year">Year:</label>
+                  <input
+                    type="number"
+                    id="car-year"
+                    placeholder="Year"
+                    required
+                    min="1900"
+                    max="2100"
+                  />
+                </div>
+                <div class="inputBx">
+                  <label for="car-license-plate">License Plate:</label>
+                  <input
+                    type="text"
+                    id="car-license-plate"
+                    placeholder="License Plate as 10-xxxxx"
+                    data-mask="00-00000"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="part2">
+                <div class="inputBx">
+                  <label for="car-fuel-type">Fuel Type:</label>
+                  <input
+                    type="text"
+                    id="car-fuel-type"
+                    placeholder="Fuel Type as hybrid"
+                  />
+                </div>
+                <div class="inputBx">
+                  <label for="car-transmission-type">Transmission Type:</label>
+                  <input
+                    type="text"
+                    id="car-transmission-type"
+                    placeholder="Transmission Type as manual"
+                  />
+                </div>
+                <div class="inputBx">
+                  <label for="car-color">Color:</label>
+                  <input type="text" id="car-color" placeholder="Color" />
+                </div>
+                <div class="inputBx">
+                  <label for="car-daily-rate">Daily Rate:</label>
+                  <input
+                    type="number"
+                    id="car-daily-rate"
+                    placeholder="Daily Rate"
+                    required
+                    min="0"
+                    step="0.01"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="part3">
+              <div class="inputBx">
+                <label for="car-image">Car Image:</label>
+                <input type="file" accept="image/*" id="car-image" required />
+              </div>
+              <div class="inputBx">
+                <button type="submit" value="Add Car" onclick="addCarData()">
+                  Add Car
+                </button>
+              </div>
+            </div>
+          </form>
+          <div id="loading-indicator" style="display: none">Loading...</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../JsPages/CarCompanyCar.js" defer></script>
+    <script>
+      function logout() {
+        localStorage.removeItem("authToken");
+        localStorage.removeItem("RegistrationId");
+        localStorage.removeItem("UserId");
+        window.location.href = "CompanyLogin.html";
+      }
+    </script>
+  </body>
+</html>

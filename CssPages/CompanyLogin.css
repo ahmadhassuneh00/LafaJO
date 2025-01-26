@@ -1,0 +1,282 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.IMAGE {
+
+    width: 70px;
+    border-radius: 20px;
+    /* margin-left: 40px; */
+    margin-top: 5px;
+    margin-left: 60px;
+}
+
+.IMAGE:hover {
+    display: block;
+    filter: drop-shadow(0 0 10px #fffdef);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 10px 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 80px;
+    margin-bottom: 30px;
+}
+
+.navbar .logo a {
+
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    box-shadow: 0 4px 10px rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.3);
+    list-style-type: none;
+    margin-left: 100px;
+    padding: 0;
+    display: flex;
+    margin-right: 60px;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 15px;
+    display: block;
+}
+
+.nav-links a:hover,
+.dropdown:hover .dropdown-menu {
+    background-color: #555;
+    border-radius: 20px;
+    /* Rounded corners */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    /* Ensure the dropdown button aligns properly */
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    list-style-type: none;
+    /* Use 'none' to remove the bullet points */
+    margin: 0;
+    padding: 0;
+    top: 100%;
+    left: 0;
+    min-width: 150px;
+    z-index: 1;
+    /* Ensure the dropdown menu appears on top of other content */
+}
+
+.dropdown-menu li a {
+    display: block;
+    /* Makes the entire area of the link clickable */
+    color: white;
+    /* Text color for the links */
+    padding: 10px 15px;
+    text-decoration: none;
+    /* Remove underline from the links */
+    white-space: nowrap;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #555;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    /* Show the dropdown menu on hover */
+}
+
+.dropbtn {
+    background-color: #333;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.auth-links {
+    margin-right: 15px;
+    display: flex;
+    padding-right: 20px;
+}
+
+.auth-links a {
+    box-shadow: 0 4px 10px rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
+    border: 2px solid #000;
+    /* Black border */
+    border-radius: 5px;
+    /* Rounded corners */
+    padding: 5px;
+    /* Padding */
+    display: flex;
+    align-items: center;
+    /* Align items vertically */
+    background-color: #031620;
+    margin-left: 20px;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+}
+
+.auth-links a:hover {
+    background-color: #555;
+}
+
+.Logout {
+
+    box-shadow: 0 4px 10px rgb(0, 0, 0);
+    border: 2px solid #000;
+    /* Black border */
+    border-radius: 5px;
+    /* Rounded corners */
+    padding: 8px 15px;
+    /* Padding */
+    display: flex;
+    align-items: center;
+    /* Align items vertically */
+    background-color: #031620;
+    margin-left: 20px;
+    color: #fff;
+    cursor: pointer;
+    /* Pointer cursor for buttons */
+    text-decoration: none;
+    /* No underline */
+    font-weight: bolder;
+
+
+}
+
+.Logout:hover {
+    background-color: #555;
+}
+
+/* .contanier2 {
+    display: flex;
+    margin: 10px;
+    width: 40%;
+} */
+
+.contanier2 div {
+    padding: 50px;
+}
+
+.container {
+    display: flex;
+    width: 1000%;
+    max-width: 900px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+.login-section,
+.links-section {
+    padding: 20px;
+    width: 50%;
+    /* display: flex; */
+}
+
+
+.login-section {
+    border-right: 1px solid #ddd;
+}
+
+.login-section h2,
+.links-section h2 {
+    margin-top: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.links-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.links-section li {
+    margin-bottom: 10px;
+}
+
+.links-section a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.links-section a:hover {
+    text-decoration: underline;
+}
+
+.CompanyLogo {
+    width: 400px;
+}
+.links-section h2{
+    /* width: 200px; */
+    text-align: center;
+}
+.contanier2 .item p{
+    width: 200px;
+    text-align: center;
+}
+.contanier2 .item img{
+    width: 200px;
+    text-align: center;
+}

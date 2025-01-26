@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="../CssPages/Profile.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../HtmlPages/Home.html">
+          <img class="IMAGE" src="../Images/logoedit.png" alt="Home Page" />
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../HtmlPages/Trips.html">Trips</a></li>
+        <li><a href="../HtmlPages/Cars.html">Cars</a></li>
+        <li><a href="../HtmlPages/Market.html">Market</a></li>
+        <li><a href="../HtmlPages/Review.html">Review</a></li>
+      </ul>
+      <div class="auth-links"></div>
+    </nav>
+    <div class="profile-container">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <ul class="menu">
+          <li><a href="#" onclick="changePassword()">Change Password</a></li>
+          <li>
+            <a href="../HtmlPages/Login.html" onclick="logout()">Logout</a>
+          </li>
+          <li><a onclick="showTab('car-rentals')">Car Rentals</a></li>
+          <li><a onclick="showTab('booked-trips')">Booked Trips</a></li>
+          <li><a onclick="showTab('bought-items')">Bought Items</a></li>
+        </ul>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <h1>Profile Overview</h1>
+        <div class="tabs">
+          <button class="tab" onclick="showTab('car-rentals')">
+            Car Rentals
+          </button>
+          <button class="tab" onclick="showTab('booked-trips')">
+            Booked Trips
+          </button>
+          <button class="tab" onclick="showTab('bought-items')">
+            Bought Items
+          </button>
+        </div>
+
+        <div class="tab-content" id="car-rentals">
+          <h2>Car Rentals</h2>
+          <div class="rentCar"></div>
+        </div>
+
+        <div class="tab-content" id="booked-trips">
+          <h2>Booked Trips</h2>
+          <div class="bookTrips"></div>
+        </div>
+
+        <div class="tab-content" id="bought-items">
+          <h2>Bought Items</h2>
+          <div class="buyItems"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../JsPages/Profile.js"></script>
+  </body>
+</html>

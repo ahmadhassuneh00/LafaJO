@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CssPages/CompanyProfile.css" />
+    <title>Company Profile</title>
+    <script>
+      function isAuthenticated() {
+        const token = localStorage.getItem("authToken");
+        return token !== null;
+      }
+
+      function protectRoute() {
+        if (!isAuthenticated()) {
+          window.location.href = "../HtmlPages/CompanyLogin.html";
+        }
+      }
+
+      window.onload = function () {
+        protectRoute();
+      };
+    </script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../HtmlPages/Home.html">
+          <img class="IMAGE" src="../Images/logoedit.png" alt="Home Page" />
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../HtmlPages/Trips.html">Trips</a></li>
+        <li><a href="../HtmlPages/Cars.html">Cars</a></li>
+        <li><a href="../HtmlPages/Market.html">Market</a></li>
+        <li><a href="../HtmlPages/Review.html">Review</a></li>
+      </ul>
+      <div class="dropdown">
+        <div class="nameCompany"></div>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="../HtmlPages/CompanyLogin.html" onclick="logout()"
+              >Logout</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="card-container"></div>
+    <div class="card-container2">
+    </div>
+
+    </div>
+    
+
+    <script src="../JsPages/CompanyProfile.js"></script>
+    <script>
+      function logout() {
+        localStorage.removeItem("authToken");
+        localStorage.removeItem("RegistrationId");
+        localStorage.removeItem("TypeId");
+        localStorage.removeItem("UserId");
+        localStorage.clear();
+        window.location.href = "CompanyLogin.html";
+      }
+    </script>
+  </body>
+</html>

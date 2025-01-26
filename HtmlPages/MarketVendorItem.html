@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Items</title>
+    <link rel="stylesheet" href="../CssPages/MarketVendorItem.css" />
+  </head>
+  <body>
+    <div class="checkout-form-container">
+      <h2>Add Item Information:</h2>
+      <form id="AddItemForm">
+        <div class="form-group">
+          <label for="Name">Name of product:</label>
+          <input type="text" id="Name" name="Name" required />
+        </div>
+        <div class="form-group">
+          <label for="NumOfItems">Number Of Items:</label>
+          <input type="number" id="NumOfItems" name="NumOfItems" required />
+        </div>
+        <div class="form-group">
+          <label for="price">Price ($):</label>
+          <input type="number" id="price" name="price" required />
+        </div>
+        <div class="form-group">
+          <label for="photo">Photo:</label>
+          <input type="file" id="photo" name="photo" required />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <script src="../JsPages/MarketVendorItem.js"></script>
+    <script>
+      // Attach the addTripData function to the form submit event
+      document
+        .getElementById("AddItemForm")
+        .addEventListener("submit", addItemData);
+    </script>
+  </body>
+</html>

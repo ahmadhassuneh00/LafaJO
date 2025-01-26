@@ -1,0 +1,359 @@
+.IMAGE {
+
+  width: 70px;
+  border-radius: 20px;
+  /* margin-left: 40px; */
+  margin-top: 5px;
+  margin-left: 60px;
+}
+
+.IMAGE:hover {
+  display: block;
+  filter: drop-shadow(0 0 10px #fffdef);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 10px 20px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 80px;
+  margin-bottom: 30px;
+}
+
+.navbar .logo a {
+
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  box-shadow: 0 4px 10px rgb(0, 0, 0);
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.3);
+  list-style-type: none;
+  margin-left: 100px;
+  padding: 0;
+  display: flex;
+  margin-right: 60px;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  font-size: 18px;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 15px;
+  display: block;
+}
+
+.nav-links a:hover,
+.dropdown:hover .dropdown-menu {
+  background-color: #555;
+  border-radius: 20px;
+  /* Rounded corners */
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  /* Ensure the dropdown button aligns properly */
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  list-style-type: none;
+  /* Use 'none' to remove the bullet points */
+  margin: 0;
+  padding: 0;
+  top: 100%;
+  left: 0;
+  min-width: 150px;
+  z-index: 1;
+  /* Ensure the dropdown menu appears on top of other content */
+}
+
+.dropdown-menu li a {
+  display: block;
+  /* Makes the entire area of the link clickable */
+  color: white;
+  /* Text color for the links */
+  padding: 10px 15px;
+  text-decoration: none;
+  /* Remove underline from the links */
+  white-space: nowrap;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #555;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  /* Show the dropdown menu on hover */
+}
+
+.dropbtn {
+  background-color: #333;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.auth-links {
+  margin-right: 15px;
+  display: flex;
+}
+
+.auth-links a {
+  box-shadow: 0 4px 10px rgb(0, 0, 0);
+  border: 1px solid rgb(0, 0, 0);
+  border: 2px solid #000;
+  /* Black border */
+  border-radius: 5px;
+  /* Rounded corners */
+  padding: 5px;
+  /* Padding */
+  display: flex;
+  align-items: center;
+  /* Align items vertically */
+  background-color: #031620;
+  margin-left: 20px;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 15px;
+}
+
+.auth-links a:hover {
+  background-color: #555;
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #eaeaea;
+  background-image: url(tripsbackground.png);
+  background-size: cover;
+}
+
+/* Search Container */
+.search-container {
+  border-radius: 5px;
+  top: 100px;
+  left: 100px;
+  position: absolute;
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#search-bar {
+  padding: 10px;
+  width: 250px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+}
+
+#search-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #000000;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+#search-button:hover {
+  background-color: #666565;
+}
+
+/* Reviews Details Section */
+.reviews-details {
+  top: 200px;
+  left: 100px;
+  position: absolute;
+  background-color: #fff;
+  padding: 40px;
+  margin: 20px auto;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: animate 0.7s ease-in-out 1 forwards;
+}
+
+.reviews-details h2 {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.review {
+  border-bottom: 1px solid #ddd;
+  padding: 20px 0;
+}
+
+.review:last-child {
+  border-bottom: none;
+}
+
+.review h3 {
+  margin: 0 0 10px;
+  font-size: 1.5em;
+}
+
+.review p {
+  margin: 5px 0;
+}
+
+.review p strong {
+  color: #686666;
+}
+
+.review a {
+  text-decoration: none;
+  color: #000000;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+.trip-details {
+  top: 200px;
+  right: 100px;
+  position: absolute;
+  background-color: #fff;
+  padding: 40px;
+  margin: 20px auto;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  animation: animate 0.7s ease-in-out 1 forwards;
+}
+
+.trip-details h2 {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.trip img{
+  width:400px;
+  height: 225px;
+}
+
+.trip a{
+  margin-left: 150px;
+  text-decoration: none;
+  color: #000000;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+
+.car-details {
+  top: 650px;
+  right: 100px;
+  position: absolute;
+  background-color: #fff;
+  padding: 40px;
+  margin: 20px auto;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: animate 0.7s ease-in-out 1 forwards;
+}
+
+.car-details h2 {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.car img {
+  width: 400px;
+}
+
+.car a {
+  margin-left: 150px;
+  text-decoration: none;
+  color: #000000;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+
+.market-details {
+  top: 1100px;
+  right: 100px;
+  position: absolute;
+  background-color: #fff;
+  padding: 40px;
+  margin: 20px auto;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: animate 0.7s ease-in-out 1 forwards;
+}
+
+.market-details h2 {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.market img {
+  width: 400px;
+}
+
+.market a {
+  margin-left: 150px;
+  text-decoration: none;
+  color: #000000;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+@keyframes animate {
+  from {
+    opacity: 0;
+    transform: translate(0, 100px);
+    filter: blur(33px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0);
+    filter: blur(0);
+  }
+}

@@ -1,0 +1,270 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  background: #eaeaea;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.IMAGE {
+  width: 70px;
+  border-radius: 20px;
+  /* margin-left: 40px; */
+  margin-top: 5px;
+  margin-left: 60px;
+}
+
+.IMAGE:hover {
+  display: block;
+  filter: drop-shadow(0 0 10px #fffdef);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 20px;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 80px;
+}
+
+.navbar .logo a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 15px;
+  display: block;
+}
+
+
+.nav-links a:hover {
+  background-color: #555;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  /* Ensure the dropdown button aligns properly */
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  list-style-type: none;
+  /* Use 'none' to remove the bullet points */
+  margin: 0;
+  padding: 0;
+  top: 100%;
+  left: 0;
+  min-width: 150px;
+  z-index: 1;
+  /* Ensure the dropdown menu appears on top of other content */
+}
+
+.dropdown-menu li a {
+  display: block;
+  /* Makes the entire area of the link clickable */
+  color: white;
+  /* Text color for the links */
+  padding: 10px 15px;
+  text-decoration: none;
+  /* Remove underline from the links */
+  white-space: nowrap;
+  background-color: #333;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #555;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  /* Show the dropdown menu on hover */
+}
+
+.dropbtn {
+  background-color: #333;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.auth-links {
+  margin-right: 15px;
+  display: flex;
+}
+
+.auth-links a {
+  margin-left: 20px;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 15px;
+}
+
+.auth-links a :hover {
+  background-color: #555;
+}
+
+.nameCompany {
+  margin-left: 20px;
+  color: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  height: 100vh;
+}
+
+.profile-container {
+  display: flex;
+  width: 100%;
+  margin-top: 70px;
+}
+
+.main-content {
+  margin-right: 270px;
+  /* Space for the sidebar */
+  padding: 20px;
+  width: calc(100% - 270px);
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #f4f4f4;
+  padding: 20px;
+  position: fixed;
+  right: 0;
+  /* Position the sidebar on the right */
+  height: 100%;
+}
+
+
+
+.menu {
+  list-style: none;
+}
+
+.menu li {
+  margin: 10px 0;
+  margin-top: 40px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+}
+
+.menu a:hover {
+  color: #007bff;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.tab:hover {
+  background-color: #0056b3;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+#car-rentals {
+  padding-bottom: 10%;
+}
+
+.trip-image {
+  height: 250px;
+  width: 350px;
+  border-radius: 25px;
+}
+
+.item-image {
+  height: 250px;
+  width: 350px;
+  border-radius: 25px;
+}
+
+
+.BookNow {
+  background-color: #a2b3ff;
+  border: #0021b4 solid 1px;
+  padding: 5px;
+  border-radius: 20px;
+  font-weight: bolder;
+  width: 30%;
+}
+
+.BookNow:hover {
+  background-color: #4869ff;
+}
+
+.BuyNow {
+  background-color: #a2b3ff;
+  border: #0021b4 solid 1px;
+  padding: 5px;
+  border-radius: 20px;
+  font-weight: bolder;
+  width: 30%;
+}
+
+.BuyNow:hover {
+  background-color: #4869ff;
+}
